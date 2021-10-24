@@ -28,12 +28,16 @@ public class PlayerMovement : MonoBehaviour
         //    transform.localScale = new Vector3(-1, 1, 1);
 
         if (Input.GetKey(KeyCode.Space) && grounded)
+        {
+            anim.SetBool("jump", true);
             Jump();
 
-        //set animator parameters
-        anim.SetBool("run", horizontalInput != 0);
-        anim.SetBool("grounded", grounded);
+        }
 
+        //set animator parameters
+        if (grounded) {
+            anim.SetBool("jump", false);
+        }
     }
 
     // endless runner  bcause this is call once per physics frame
