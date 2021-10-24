@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float cameraSpeed;
+    public PlayerMovement player;
+    private Vector3 lastPlayerPosition;
+    private float distanceToMove;
 
-    // Update is called once per frame
+    void Start()
+    {
+        player = FindObjectOfType<PlayerMovement>();
+        lastPlayerPosition = player.transform.position;
+    }
     void Update()
     {
-        transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
+        distanceToMove = player.transform.position.x - lastPlayerPosition.x;
+        transform.position = new Vector3(transform.position.x + distanceToMove, transform.position.y, transform.position.z);
+        lastPlayerPosition = player.transform.position;
+        //transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
     }
 }

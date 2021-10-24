@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class LoopingBackground : MonoBehaviour
 {
-    public float backgroundSpeed;
-    public Renderer backgroundRenderer;
+    public PlayerMovement player;
+    private Vector3 lastPlayerPosition;
+    private float distanceToMove;
 
-    // Update is called once per frame
+    void Start()
+    {
+        player = FindObjectOfType<PlayerMovement>();
+        lastPlayerPosition = player.transform.position;
+    }
+
     void Update()
     {
-        backgroundRenderer.material.mainTextureOffset += new Vector2(backgroundSpeed * Time.deltaTime, 0f);
+        distanceToMove = player.transform.position.x - lastPlayerPosition.x;
+        transform.position = new Vector3(transform.position.x + distanceToMove, transform.position.y, transform.position.z);
+        lastPlayerPosition = player.transform.position;
     }
 }
