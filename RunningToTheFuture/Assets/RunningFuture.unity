@@ -768,7 +768,7 @@ Animator:
   m_GameObject: {fileID: 925724631}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4931d69291f05da44b6da7ac7da3e61b, type: 2}
+  m_Controller: {fileID: 9100000, guid: f6360c2cecc2e3243bf9b26b1c0eec5b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1393,7 +1393,7 @@ MonoBehaviour:
   bottleObstacle: {fileID: 643142627115439124, guid: a3ae0526cbb569b44a0060b02142a5d5, type: 3}
   maxX: 3.5
   minX: 3
-  timeBetweenSpawn: 0.8
+  timeBetweenSpawn: 2.19
 --- !u!1 &2132753806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,8 +1429,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 40.929996, y: 5.535942}
-    newSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 13.65, y: 10.24}
+    newSize: {x: 13.65, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1479,14 +1479,14 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e404f0a4c78ff58459dd3b82bb140d03, type: 3}
-  m_Color: {r: 0.8666667, g: 0.53582156, b: 0.16078432, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2132753809
