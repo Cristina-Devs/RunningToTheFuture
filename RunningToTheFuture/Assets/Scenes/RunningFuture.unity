@@ -1806,7 +1806,7 @@ GameObject:
   - component: {fileID: 1031383538}
   - component: {fileID: 1031383540}
   m_Layer: 6
-  m_Name: Platform 7x1 (1)
+  m_Name: Platform 7x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2486,7 +2486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5985783e99e9b9b468dab192d12f1afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 7516573050281684627, guid: 60fda9ee3267dd2488d1897909dbdc50, type: 3}
+  platform: {fileID: 4936370136839233000, guid: 60fda9ee3267dd2488d1897909dbdc50, type: 3}
   generationPoint: {fileID: 478153523}
   distanceBetween: 3
   distanceBetweenMin: 1
