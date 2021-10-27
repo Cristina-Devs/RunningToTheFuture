@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;   //OK
     private Animator anim;
 
+    public GameManager gameManager;
+
     void Start()
     {
         //Grab references for ridigbody and animator from object
@@ -45,6 +47,16 @@ public class PlayerMovement : MonoBehaviour
         anim.SetTrigger("jump");
         //grounded = false;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "killbox") 
+        {
+            gameManager.RestartGame();
+        }
+        //grounded = true;
+    }
+
     //////if (horizontalInput > 0.01f) //look at right
     //////    transform.localScale = Vector3.one;
     //////else if (horizontalInput < 0.01f) //looking at left
