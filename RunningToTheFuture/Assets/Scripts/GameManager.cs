@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameOverPanel;
+    public DeathMenu deathMenu;
 
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
@@ -13,11 +13,13 @@ public class GameManager : MonoBehaviour
     private Vector3 playerStartPoint;
 
     private PlatformDestroyer[] platformList;
+    private ScoreManager scoreManager;
 
     private void Start()
     {
         platformStartPoint = platformGenerator.position;
         playerStartPoint = player.transform.position;
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -28,38 +30,26 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        StartCoroutine("RestartGameCo");
-        //player.gameObject.SetActive(false);
-        //gameOverPanel.SetActive(true);
-        //platformList = FindObjectsOfType<PlatformDestroyer>();
-        //for (int i = 0; i < platformList.Length; i++)
-        //{
-        //    platformList[i].gameObject.SetActive(false);
-        //}
+        scoreManager.scoreIncreasing = false;
+        player.gameObject.SetActive(false);
+        deathMenu.gameObject.SetActive(true);
+        //StartCoroutine("RestartGameCo");
     }
 
-    private IEnumerator RestartGameCo()
+    public void Reset() 
     {
-        player.gameObject.SetActive(false);
-        gameOverPanel.SetActive(true);
-        yield return new WaitForSeconds(3f);
+        deathMenu.gameObject.SetActive(false);
         platformList = FindObjectsOfType<PlatformDestroyer>();
         for (int i = 0; i < platformList.Length; i++)
         {
             platformList[i].gameObject.SetActive(false);
         }
-        gameOverPanel.SetActive(false);
         player.transform.position = playerStartPoint;
         platformGenerator.position = platformStartPoint;
         player.gameObject.SetActive(true);
-    }
 
-    public void TryAgain() 
-    {
-        gameOverPanel.SetActive(false);
-        player.transform.position = playerStartPoint;
-        platformGenerator.position = platformStartPoint;
-        player.gameObject.SetActive(true);
+        scoreManager.scoreCount = 0;
+        scoreManager.scoreIncreasing = true;
 
     }
 }
