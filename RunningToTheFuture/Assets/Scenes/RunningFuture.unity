@@ -1500,6 +1500,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  gameManager: {fileID: 1149238276}
 --- !u!1 &970277167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,7 +1891,6 @@ MonoBehaviour:
   gameOverPanel: {fileID: 78119358}
   platformGenerator: {fileID: 1905897908}
   player: {fileID: 925724637}
-  showPannel: 0
 --- !u!4 &1149238277
 Transform:
   m_ObjectHideFlags: 0
