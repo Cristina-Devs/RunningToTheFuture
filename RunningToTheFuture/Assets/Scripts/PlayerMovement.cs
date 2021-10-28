@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed; 
+    public float moveSpeed;
+    public float speedMultiplier;
+    public float speedIncreaseMilestone;
+    private float speedMilestoneCount;
+
     public float jumpForce;
     public float jumpTime;
+    private float jumpTimeCounter;
+
     public bool grounded;
     public LayerMask whatIsGround;
     public GameManager gameManager;
 
-    private float jumpTimeCounter;
     private Rigidbody2D body;  
     private Collider2D myCollider;
     private Animator anim;
@@ -23,11 +28,24 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         myCollider = GetComponent<Collider2D>();
         jumpTimeCounter = jumpTime;
+        speedMilestoneCount = speedIncreaseMilestone;
     }
 
     void Update()
     {
         grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
+
+        // antes ed mover el sprite, si la posicion es mayor q el speed milestone, aumentar speed del jugador
+        if (transform.position.x > speedMilestoneCount)
+        {
+            speedMilestoneCount += speedIncreaseMilestone;
+            // sin esto se mueve ridiculamente rapido aunque intentes ajustar milestones y velocidad
+            // de esta forma se puede ir manteniendo en funcion de la distancia recorrida
+            // si el primero es a los 100, el siguiente a los 125, 150... etc para hacerlo más jugable
+            speedIncreaseMilestone = speedIncreaseMilestone * speedMultiplier;
+            moveSpeed = moveSpeed * speedMultiplier;
+        }
+
         body.velocity = new Vector2(moveSpeed, body.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
