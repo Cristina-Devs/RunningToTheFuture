@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public GameManager gameManager;
 
     private Rigidbody2D body;  
-    private Collider2D myCollider;
+    //private Collider2D myCollider;
     private Animator anim;
 
     void Start()
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         //references for ridigbody and animator from object
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        myCollider = GetComponent<Collider2D>();
+        //myCollider = GetComponent<Collider2D>();
         jumpTimeCounter = jumpTime;
         speedMilestoneCount = speedIncreaseMilestone;
     }
