@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpForce: 24
+  jumpForce: 25
   grounded: 0
   whatIsGround:
     serializedVersion: 2
@@ -2857,9 +2857,8 @@ MonoBehaviour:
   generationPoint: {fileID: 478153523}
   distanceBetween: 5e+13
   distanceBetweenMin: 1
-  distanceBetweenMax: 8
+  distanceBetweenMax: 5
   objectPools:
-  - {fileID: 116009812}
   - {fileID: 2089002921}
   - {fileID: 2112954052}
   - {fileID: 1894563173}
