@@ -4,32 +4,30 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;  //OK
-    public float jumpForce;  //OK
-    public bool grounded; 
-
+    public float moveSpeed; 
+    public float jumpForce;
+    public float jumpTime;
+    public bool grounded;
     public LayerMask whatIsGround;
-    private Collider2D myCollider;
-
-    private Rigidbody2D body;   //OK
-    private Animator anim;
-
     public GameManager gameManager;
+
+    private float jumpTimeCounter;
+    private Rigidbody2D body;  
+    private Collider2D myCollider;
+    private Animator anim;
 
     void Start()
     {
-        //Grab references for ridigbody and animator from object
+        //references for ridigbody and animator from object
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         myCollider = GetComponent<Collider2D>();
+        jumpTimeCounter = jumpTime;
     }
 
     void Update()
     {
         grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
-
-        //////float horizontalInput = Input.GetAxis("Horizontal");
-        //////in endless runner this is playerDirection = new Vector2(0, directionY).normalized;
         body.velocity = new Vector2(moveSpeed, body.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
@@ -39,6 +37,29 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
             }
         }
+
+        if (Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0))
+        {
+            if (jumpTimeCounter > 0)
+            {
+                Jump();
+                jumpTimeCounter -= Time.deltaTime;
+            }
+        }
+
+
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
+        {
+             jumpTimeCounter = 0;
+        }
+
+        if (grounded)
+        {
+            jumpTimeCounter = jumpTime;
+        }
+
+
+        // anim.setFloat("Speed", body.velocity.x);
         anim.SetBool("jump", !grounded);
     }
     private void Jump()
