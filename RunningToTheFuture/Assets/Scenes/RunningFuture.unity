@@ -504,6 +504,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &266557264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 266557265}
+  - component: {fileID: 266557266}
+  m_Layer: 0
+  m_Name: PinkFishPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &266557265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266557264}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 612858276}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &266557266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266557264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9cdfaa9d0d86e458da8187a84da20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 3762666382443212057, guid: 3a8b44e806a979e4aa9c7b7d51495ff7, type: 3}
+  pooledAmount: 15
 --- !u!1 &299509037
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +835,52 @@ Transform:
   m_Father: {fileID: 1905897908}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &612858275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612858276}
+  - component: {fileID: 612858277}
+  m_Layer: 0
+  m_Name: PinkFishGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &612858276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612858275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 266557265}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &612858277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612858275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c519d95262fcc9448f4c42820bb0aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinkFishPool: {fileID: 266557266}
+  distanceBetweenFishes: 1.5
 --- !u!1 &627094641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,7 +1138,7 @@ GameObject:
   - component: {fileID: 786814017}
   m_Layer: 6
   m_Name: Catcher
-  m_TagString: Untagged
+  m_TagString: killbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1533,8 +1624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  speedMultiplier: 1.25
-  speedIncreaseMilestone: 100
+  speedMultiplier: 1.05
+  speedIncreaseMilestone: 50
   jumpForce: 12
   jumpTime: 0.25
   grounded: 0
@@ -2010,9 +2101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c21ceecf67d0014a836c3537ba663d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathMenu: {fileID: 78119362}
   platformGenerator: {fileID: 1905897908}
   player: {fileID: 925724637}
+  deathMenu: {fileID: 78119362}
 --- !u!4 &1149238277
 Transform:
   m_ObjectHideFlags: 0
@@ -2871,7 +2962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905897907}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.079377, y: -4.0155535, z: -9}
+  m_LocalPosition: {x: 14.47, y: -4.0155535, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 593272793}
@@ -2901,6 +2992,7 @@ MonoBehaviour:
   - {fileID: 1894563173}
   maxHeightPoint: {fileID: 593272793}
   maxHeightChange: 3
+  randomFishTreshold: 65
 --- !u!1 &2075891393
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public DeathMenu deathMenu;
-
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
 
@@ -14,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     private PlatformDestroyer[] platformList;
     private ScoreManager scoreManager;
+
+    public DeathMenu deathMenu;
+
 
     private void Start()
     {

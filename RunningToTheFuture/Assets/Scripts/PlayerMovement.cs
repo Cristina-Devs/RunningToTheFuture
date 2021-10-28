@@ -5,9 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
+    private float moveSpeedStore;
     public float speedMultiplier;
+
     public float speedIncreaseMilestone;
+    private float speedIncreaseMilestoneStore;
     private float speedMilestoneCount;
+    private float speedMiletoneCountStore;
 
     public float jumpForce;
     public float jumpTime;
@@ -31,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
         //myCollider = GetComponent<Collider2D>();
         jumpTimeCounter = jumpTime;
         speedMilestoneCount = speedIncreaseMilestone;
+        moveSpeedStore = moveSpeed;
+        speedMiletoneCountStore = speedMilestoneCount;
+        speedIncreaseMilestoneStore = speedIncreaseMilestone;
     }
 
     void Update()
@@ -95,6 +102,10 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "killbox") 
         {
             gameManager.RestartGame();
+            moveSpeed = moveSpeedStore;
+            speedMilestoneCount = speedMiletoneCountStore;
+            speedIncreaseMilestone = speedIncreaseMilestoneStore;
+
         }
         //grounded = true;
     }
