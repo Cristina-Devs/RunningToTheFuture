@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool grounded;
     public LayerMask whatIsGround;
+    public Transform groundCheck;
+    public float groundCheckRadius;
     public GameManager gameManager;
 
     private Rigidbody2D body;  
@@ -33,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
+        //grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
         // antes ed mover el sprite, si la posicion es mayor q el speed milestone, aumentar speed del jugador
         if (transform.position.x > speedMilestoneCount)
