@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
         scoreManager.scoreIncreasing = false;
         player.gameObject.SetActive(false);
         deathMenu.gameObject.SetActive(true);
-        //StartCoroutine("RestartGameCo");
     }
 
     public void Reset() 
