@@ -28,6 +28,10 @@ public class PlatformGenerator : MonoBehaviour
     private PinkFishGenerator pinkFishGenerator;
     public float randomFishTreshold;
 
+    public float randomSpikeThreshold;
+    public ObjectPooler spikePool;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +89,24 @@ public class PlatformGenerator : MonoBehaviour
             { 
                 pinkFishGenerator.SpawnFishes(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
             }
+            // just after some random fishes, we are gonna add some random spikes:
+            if (UnityEngine.Random.Range(0f, 100f) < randomSpikeThreshold)
+            {
+                GameObject newSpike = spikePool.GetPooledObject();
+
+                // to make appear it in the long of the width platform, we use (-3, +3) for instance:
+                float spikeXPosition = UnityEngine.Random.Range(-platformWidths[platformSelector] / 2f + 1f, platformWidths[platformSelector] / 2f - 1f);
+
+
+                // to appear at the top of the platform:
+                Vector3 spikePosition = new Vector3(spikeXPosition, 0.5f, 0f);
+
+                newSpike.transform.position = transform.position + spikePosition;
+                newSpike.transform.rotation = transform.rotation;
+                newSpike.SetActive(true);
+            }
+
+
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
 
         }

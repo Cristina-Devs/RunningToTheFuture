@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTime;
     private float jumpTimeCounter;
 
+    private bool stoppedJumping;
+    private bool canDoubleJump;
+
     public bool grounded;
     public LayerMask whatIsGround;
     public Transform groundCheck;
@@ -38,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         moveSpeedStore = moveSpeed;
         speedMiletoneCountStore = speedMilestoneCount;
         speedIncreaseMilestoneStore = speedIncreaseMilestone;
+        stoppedJumping = true;
     }
 
     void Update()
@@ -63,10 +67,18 @@ public class PlayerMovement : MonoBehaviour
             if (grounded)
             {
                 Jump();
+                stoppedJumping = false;
+            }
+            if (!grounded && canDoubleJump)
+            {
+                Jump();
+                jumpTimeCounter = jumpTime;
+                stoppedJumping = false;
+                canDoubleJump = false;
             }
         }
 
-        if (Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0))
+        if ((Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0)) && !stoppedJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -79,11 +91,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
              jumpTimeCounter = 0;
+            stoppedJumping = true;
         }
 
         if (grounded)
         {
             jumpTimeCounter = jumpTime;
+            canDoubleJump = true;
         }
 
 
