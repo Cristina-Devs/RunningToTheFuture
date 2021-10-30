@@ -3915,7 +3915,7 @@ MonoBehaviour:
   maxHeightPoint: {fileID: 593272793}
   maxHeightChange: 3
   randomFishTreshold: 65
-  randomSpikeThreshold: 50
+  randomSpikeThreshold: 30
   spikePool: {fileID: 1619708498}
 --- !u!1 &1929184794
 GameObject:
