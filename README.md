@@ -8,3 +8,7 @@ Area de Videojocs, Universitat Oberta de Catalunya
 
 Enllaç al video explicatiu del Joc: 
 https://www.wevideo.com/view/2430068949
+
+L'executable (apk per Android) es pot trobar a la carpeta "PAC2 - Versio Parcial" d'aquest repositori.
+
+Cristina Saura Pérez
