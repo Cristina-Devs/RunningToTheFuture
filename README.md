@@ -6,6 +6,8 @@ Treball Final del Grau d'Enginyeria Informàtica.
 Area de Videojocs, Universitat Oberta de Catalunya
 
 
+PAC 2 - Versió parcial del Joc:
+
 Enllaç al video explicatiu del Joc: 
 https://www.wevideo.com/view/2430068949
 
