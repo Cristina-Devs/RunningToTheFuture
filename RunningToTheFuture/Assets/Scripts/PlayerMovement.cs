@@ -119,7 +119,6 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = moveSpeedStore;
             speedMilestoneCount = speedMiletoneCountStore;
             speedIncreaseMilestone = speedIncreaseMilestoneStore;
-
         }
         //grounded = true;
     }
