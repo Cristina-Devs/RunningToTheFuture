@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: bda16af24d561314fa00dbc4e9f08f92
+guid: 5f67602c85a27a847aed4d15b8e0339e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9128649472322045938
-    second: spritesheet_enemies_0
+      213: -3008879249828299126
+    second: Jump (28x28)_0
   - first:
-      213: 6109263987078402175
-    second: spritesheet_enemies_1
+      213: 4681692366024343091
+    second: Jump (28x28)_1
   - first:
-      213: 3919647977461896085
-    second: spritesheet_enemies_2
+      213: -4280839998127415039
+    second: Jump (28x28)_2
   - first:
-      213: 7454244456074240545
-    second: spritesheet_enemies_3
+      213: 6018414194862253689
+    second: Jump (28x28)_3
   - first:
-      213: 6681734020997136816
-    second: spritesheet_enemies_4
+      213: 3596417087806819594
+    second: Jump (28x28)_4
   - first:
-      213: 4129203520044859272
-    second: spritesheet_enemies_5
+      213: 6008391082630914036
+    second: Jump (28x28)_5
   - first:
-      213: -8445709700532192620
-    second: spritesheet_enemies_6
+      213: 6130167964694822903
+    second: Jump (28x28)_6
   - first:
-      213: -372778437775962894
-    second: spritesheet_enemies_7
-  - first:
-      213: 4418005393109676608
-    second: spritesheet_enemies_8
-  - first:
-      213: -2486701741819592134
-    second: spritesheet_enemies_9
+      213: 4513304123404435328
+    second: Jump (28x28)_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -76,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -91,14 +85,14 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,34 +101,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -145,211 +115,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_enemies_0
+      name: Jump (28x28)_0
       rect:
         serializedVersion: 2
-        x: 271
-        y: 512
-        width: 105
-        height: 84
+        x: 0
+        y: 0
+        width: 28
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f700d4545a7fae70800000000000000
-      internalID: 9128649472322045938
+      spriteID: f11d99c5f3b1e3440a58c630f5f565f3
+      internalID: -3008879249828299126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_enemies_1
+      name: Jump (28x28)_1
       rect:
         serializedVersion: 2
-        x: 139
-        y: 98
-        width: 109
-        height: 66
+        x: 28
+        y: 0
+        width: 28
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7015ec5a3778c450800000000000000
-      internalID: 6109263987078402175
+      spriteID: cc6cddea24ab0cc44837d79d06c500ee
+      internalID: 4681692366024343091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_enemies_2
+      name: Jump (28x28)_2
       rect:
         serializedVersion: 2
-        x: 272
-        y: 1007
-        width: 104
-        height: 75
+        x: 56
+        y: 0
+        width: 28
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 593d13d7113656630800000000000000
-      internalID: 3919647977461896085
+      spriteID: ffccdbfec87e16a4cb95b0d668dee487
+      internalID: -4280839998127415039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_enemies_3
+      name: Jump (28x28)_3
       rect:
         serializedVersion: 2
-        x: 8
-        y: 1137
-        width: 112
-        height: 77
+        x: 84
+        y: 0
+        width: 28
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 122ea39a6dbc27760800000000000000
-      internalID: 7454244456074240545
+      spriteID: c3f4a1a002e27554590a92b140a4159a
+      internalID: 6018414194862253689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_enemies_4
+      name: Jump (28x28)_4
       rect:
         serializedVersion: 2
-        x: 402
-        y: 1028
-        width: 104
-        height: 88
+        x: 112
+        y: 0
+        width: 28
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b14d25d0b94abc50800000000000000
-      internalID: 6681734020997136816
+      spriteID: 6ac6ac8c36dc73748a9c0a37b06206af
+      internalID: 3596417087806819594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_enemies_5
+      name: Jump (28x28)_5
       rect:
         serializedVersion: 2
-        x: 137
-        y: 498
-        width: 114
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 140
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88ff09959b0ed4930800000000000000
-      internalID: 4129203520044859272
+      spriteID: 5197378fbff6b9e428a574f27e7610e9
+      internalID: 6008391082630914036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_enemies_6
+      name: Jump (28x28)_6
       rect:
         serializedVersion: 2
-        x: 135
-        y: 618
-        width: 117
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 168
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49a35bf46cfcaca80800000000000000
-      internalID: -8445709700532192620
+      spriteID: 0b83726f6f9d30d4dbaedf625932d8da
+      internalID: 6130167964694822903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_enemies_7
+      name: Jump (28x28)_7
       rect:
         serializedVersion: 2
-        x: 136
-        y: 878
-        width: 116
-        height: 58
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 196
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fc40746cff93daf0800000000000000
-      internalID: -372778437775962894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_enemies_8
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 748
-        width: 118
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 042ff085f78ef4d30800000000000000
-      internalID: 4418005393109676608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_enemies_9
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 496
-        width: 117
-        height: 116
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a328f70e0f57d7dd0800000000000000
-      internalID: -2486701741819592134
+      spriteID: 3a27820aa43264f4987ee5faeb8364c3
+      internalID: 4513304123404435328
       vertices: []
       indices: 
       edges: []
