@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemySawMovement : MonoBehaviour
 {
-    /*public float movementDistance;
+    public float movementDistance;
     public float speed;
-    private bool movingLeft;
+    public bool movingLeft;
     private float leftEdge;
     private float rightEdge;
 
@@ -15,8 +15,14 @@ public class EnemySawMovement : MonoBehaviour
     {
         leftEdge = transform.position.x - movementDistance;
         rightEdge = transform.position.x + movementDistance;
-        Debug.Log("Starttttt leftEdge: " + leftEdge);
-        Debug.Log("Starttttt rightEdge: " + rightEdge);
+        //Debug.Log("Starttttt leftEdge: " + leftEdge);
+        //Debug.Log("Starttttt rightEdge: " + rightEdge);
+    }
+
+    private void OnEnable()
+    {
+        leftEdge = transform.position.x - movementDistance;
+        rightEdge = transform.position.x + movementDistance;
     }
 
     // Update is called once per frame
@@ -35,31 +41,31 @@ public class EnemySawMovement : MonoBehaviour
 
     void goMoveLeft() 
     {
-        Debug.Log("-- goMoveLeft ? -- transform.position.x > leftEdge: " + transform.position.x);
+        //Debug.Log("-- goMoveLeft ? -- transform.position.x > leftEdge: " + transform.position.x);
         if (transform.position.x > leftEdge)
         {
-            Debug.Log("-- goMoveLeft -- YES");
+            //Debug.Log("-- goMoveLeft -- YES");
             transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         else
         {
-            Debug.Log("-- goMoveLeft -- NOUP");
+            //Debug.Log("-- goMoveLeft -- NOUP");
             movingLeft = false;
         }
     }
 
     void goMoveRight()
     {
-        Debug.Log("-- goMoveRight ? -- transform.position.x < rightEdge: " + transform.position.x);
+        //Debug.Log("-- goMoveRight ? -- transform.position.x < rightEdge: " + transform.position.x);
         if (transform.position.x < rightEdge)
         {
-            Debug.Log("-- goMoveRight -- YES");
+            //Debug.Log("-- goMoveRight -- YES");
             transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         else
         {
-            Debug.Log("-- goMoveRight -- NOUP");
+            //Debug.Log("-- goMoveRight -- NOUP");
             movingLeft = true;
         }
-    }*/
+    }
 }
