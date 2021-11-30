@@ -424,6 +424,51 @@ Transform:
   m_Father: {fileID: 1843508733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &157844724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157844726}
+  - component: {fileID: 157844725}
+  m_Layer: 0
+  m_Name: SpikePoolMovement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157844725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157844724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9cdfaa9d0d86e458da8187a84da20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 9062269170801426486, guid: d13ce5973821b8a4d83bbdb0567da36b, type: 3}
+  pooledAmount: 5
+--- !u!4 &157844726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157844724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 239.29398, y: 185.94858, z: -131.59789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259044609
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +985,7 @@ MonoBehaviour:
   highScoreCount: 0
   pointsPerSecond: 1
   scoreIncreasing: 1
+  savedScore: 0
 --- !u!1 &555906054
 GameObject:
   m_ObjectHideFlags: 0
@@ -3917,6 +3963,7 @@ MonoBehaviour:
   randomFishTreshold: 65
   randomSpikeThreshold: 30
   spikePool: {fileID: 1619708498}
+  spikePoolMovement: {fileID: 157844725}
 --- !u!1 &1929184794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4186,10 +4233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09fc5ef86a42f724498896da1e18b405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottleObstacle: {fileID: 643142627115439124, guid: a3ae0526cbb569b44a0060b02142a5d5, type: 3}
-  maxX: 3.5
-  minX: 3
-  timeBetweenSpawn: 2.19
 --- !u!1 &2112954050
 GameObject:
   m_ObjectHideFlags: 0

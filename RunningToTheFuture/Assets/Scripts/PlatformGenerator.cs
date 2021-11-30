@@ -31,6 +31,8 @@ public class PlatformGenerator : MonoBehaviour
     public float randomSpikeThreshold;
     public ObjectPooler spikePool;
 
+    public ObjectPooler spikePoolMovement;
+    private ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,7 @@ public class PlatformGenerator : MonoBehaviour
         maxHeight = maxHeightPoint.position.y;
 
         pinkFishGenerator = FindObjectOfType<PinkFishGenerator>();
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -94,8 +97,12 @@ public class PlatformGenerator : MonoBehaviour
             {
                 GameObject newSpike = spikePool.GetPooledObject();
 
+                if (scoreManager.scoreCount > 2000) {
+                    newSpike = spikePoolMovement.GetPooledObject();
+                }
+
                 // to make appear it in the long of the width platform, we use (-3, +3) for instance:
-                float spikeXPosition = UnityEngine.Random.Range(-platformWidths[platformSelector] / 2f + 1f, platformWidths[platformSelector] / 2f - 1f);
+                    float spikeXPosition = UnityEngine.Random.Range(-platformWidths[platformSelector] / 2f + 1f, platformWidths[platformSelector] / 2f - 1f);
 
 
                 // to appear at the top of the platform:
@@ -105,7 +112,6 @@ public class PlatformGenerator : MonoBehaviour
                 newSpike.transform.rotation = transform.rotation;
                 newSpike.SetActive(true);
             }
-
 
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
 
