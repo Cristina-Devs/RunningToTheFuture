@@ -5,6 +5,7 @@ using UnityEngine;
 public class PinkFishGenerator : MonoBehaviour
 {
     public ObjectPooler pinkFishPool;
+    public ObjectPooler monkeyPool;
     public float distanceBetweenFishes;
 
     public void SpawnFishes(Vector3 startPosition) 
@@ -21,5 +22,12 @@ public class PinkFishGenerator : MonoBehaviour
         fish3.transform.position = new Vector3(startPosition.x + distanceBetweenFishes, startPosition.y, startPosition.z);
         fish3.SetActive(true);
 
+    }
+
+    public void addMonkeyPool(Vector3 startPosition)
+    {
+        GameObject monkey = monkeyPool.GetPooledObject();
+        monkey.transform.position = startPosition;
+        monkey.SetActive(true);
     }
 }

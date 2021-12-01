@@ -16,6 +16,9 @@ public class PlatformGenerator : MonoBehaviour
     //flag
     private bool spikeAdded;
     private bool fishesAdded;
+    private bool showMonkey;
+    private bool showMonkeyFirstTime;
+    private bool monkeyAdded;
 
     //public GameObject[] platforms;  //8
     private int platformSelector;
@@ -69,12 +72,16 @@ public class PlatformGenerator : MonoBehaviour
         //initSawMovement();
         //leftEdge = transform.position.x - movementDistance;
         //rightEdge = transform.position.x + movementDistance;
+        showMonkey = false;
+        showMonkeyFirstTime = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         spikeAdded = false;
+        if (scoreManager.scoreCount > 1000 && !showMonkeyFirstTime) 
+            showMonkey = true;
 
         if (transform.position.x < generationPoint.position.x)
         {
@@ -98,14 +105,23 @@ public class PlatformGenerator : MonoBehaviour
             //generamos los peces (3), en el centro pero un poco más arriba de la plataforma no en el suelo (1f)
             //y de forma aleatoria, no siempre
             fishesAdded = false;
+            monkeyAdded = false;
             if (UnityEngine.Random.Range(0f, 100f) < randomFishTreshold)
             {
-                pinkFishGenerator.SpawnFishes(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
-                fishesAdded = true;
+                if (showMonkey)
+                {
+                    pinkFishGenerator.addMonkeyPool(new Vector3(transform.position.x, 2.2f, transform.position.z));
+                    showMonkey = false;
+                    showMonkeyFirstTime = true;
+                    monkeyAdded = true;
+                } else {
+                    pinkFishGenerator.SpawnFishes(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
+                    fishesAdded = true;
+                }
             }
 
             // just after some random fishes, we are gonna add some random spikes:
-            if (UnityEngine.Random.Range(0f, 100f) < randomSpikeThreshold)
+            if (UnityEngine.Random.Range(0f, 100f) < randomSpikeThreshold && !monkeyAdded)
             {
                 GameObject newSpike = spikePool.GetPooledObject();
                 // to make appear it in the long of the width platform, we use (-3, +3) for instance:
@@ -114,33 +130,19 @@ public class PlatformGenerator : MonoBehaviour
                 Vector3 spikePosition = new Vector3(spikeXPosition, 0.5f, 0f);
                 newSpike.transform.position = transform.position + spikePosition;
                 newSpike.transform.rotation = transform.rotation;
-                newSpike.SetActive(true); //PROVISIONAL
-                spikeAdded = true; //PROVISIONAL
+                newSpike.SetActive(true);
+                spikeAdded = true;
 
             }
 
             // Start appearing not only spikes but also saws
-            if (scoreManager.scoreCount > 1000 && !spikeAdded && fishesAdded && shouldShowSaw())
+            if (scoreManager.scoreCount > 1000 && !spikeAdded && fishesAdded && !monkeyAdded && shouldShowSaw())
             {
                 GameObject newSaw = spikePoolMovement.GetPooledObject();
                 Vector3 sawPosition = new Vector3(0f, 0.5f, 0f);
                 newSaw.transform.position = transform.position + sawPosition;
                 newSaw.transform.rotation = transform.rotation;
                 newSaw.SetActive(true);
-                //Debug.Log("-- newSaw.transform.position -- " + newSaw.transform.position);
-                //manageSawMovement();
-                /*leftEdge = newSaw.transform.position.x - 5;
-                rightEdge = newSaw.transform.position.x + 5;
-                
-                if (movingLeft)
-                {
-                    goMoveLeft(newSaw);
-                }
-                else
-                {
-                    goMoveRight(newSaw);
-                }*/
-                //////////////////////
             }
 
             // finally move the point to create the new platform
