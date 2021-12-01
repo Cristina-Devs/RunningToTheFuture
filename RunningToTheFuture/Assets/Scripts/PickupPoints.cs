@@ -32,6 +32,7 @@ public class PickupPoints : MonoBehaviour
             gameObject.SetActive(false);
             if (scoreToGive > 100)
             {
+                scoreManager.AddAnimalRescued(1);
                 if (animalRescueSound.isPlaying) { animalRescueSound.Stop(); }
                 animalRescueSound.Play();
             }
