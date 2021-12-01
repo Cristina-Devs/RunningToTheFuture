@@ -52,7 +52,9 @@ public class GameManager : MonoBehaviour
 
         scoreManager.scoreCount = 0;
         scoreManager.scoreIncreasing = true;
+        platformGeneratorScript.showBirdFirstTime = true;
         platformGeneratorScript.showMonkeyFirstTime = true;
+        platformGeneratorScript.showTurtleFirstTime = true;
 
     }
 }

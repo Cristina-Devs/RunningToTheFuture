@@ -5,7 +5,9 @@ using UnityEngine;
 public class PinkFishGenerator : MonoBehaviour
 {
     public ObjectPooler pinkFishPool;
+    public ObjectPooler birdPool;
     public ObjectPooler monkeyPool;
+    public ObjectPooler turtlePool;
     public float distanceBetweenFishes;
 
     public void SpawnFishes(Vector3 startPosition) 
@@ -24,10 +26,23 @@ public class PinkFishGenerator : MonoBehaviour
 
     }
 
+    public void addBirdPool(Vector3 startPosition)
+    {
+        GameObject bird = birdPool.GetPooledObject();
+        bird.transform.position = startPosition;
+        bird.SetActive(true);
+    }
     public void addMonkeyPool(Vector3 startPosition)
     {
         GameObject monkey = monkeyPool.GetPooledObject();
         monkey.transform.position = startPosition;
         monkey.SetActive(true);
+    }
+
+    public void addTurtlePool(Vector3 startPosition)
+    {
+        GameObject turtle = turtlePool.GetPooledObject();
+        turtle.transform.position = startPosition;
+        turtle.SetActive(true);
     }
 }
