@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     // Sounds
     public AudioSource jumpSound;
     public AudioSource deathSound;
+    public AudioSource music;
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         speedIncreaseMilestoneStore = speedIncreaseMilestone;
         stoppedJumping = true;
         jumpSound = GameObject.Find("JumpSound").GetComponent<AudioSource>();
+        music = GameObject.Find("AudioManager").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -126,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = moveSpeedStore;
             speedMilestoneCount = speedMiletoneCountStore;
             speedIncreaseMilestone = speedIncreaseMilestoneStore;
+            music.Stop();
             deathSound.Play();
         }
         //grounded = true;

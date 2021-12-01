@@ -21,9 +21,6 @@ public class PlatformGenerator : MonoBehaviour
     //flag-points
     private bool spikeAdded;
     private bool fishesAdded;
-    private bool birdAdded;
-    private bool monkeyAdded;
-    private bool turtleAdded;
 
     //flag-triggers
     private bool showBird;
@@ -109,7 +106,7 @@ public class PlatformGenerator : MonoBehaviour
             //justo antes de que el generador se mueva hasta la punta de la plataforma para seguir generando
             //generamos los peces (3), en el centro pero un poco más arriba de la plataforma no en el suelo (1f)
             //y de forma aleatoria, no siempre
-            initializeAnimalsVisibility();
+            fishesAdded = false;
             if (UnityEngine.Random.Range(0f, 100f) < randomFishTreshold)
             {
                 showFishesOrCagedAnimals();
@@ -183,14 +180,6 @@ public class PlatformGenerator : MonoBehaviour
             showTurtle = true;
     }
 
-    void initializeAnimalsVisibility()
-    {
-        fishesAdded = false;
-        birdAdded = false;
-        monkeyAdded = false;
-        turtleAdded = false;
-    }
-
     void showFishesOrCagedAnimals()
     {
         if (showBird)
@@ -198,21 +187,18 @@ public class PlatformGenerator : MonoBehaviour
             pinkFishGenerator.addBirdPool(new Vector3(transform.position.x, 2.2f, transform.position.z));
             showBird = false;
             showBirdFirstTime = false;
-            birdAdded = true;
         }
         else if (showMonkey)
         {
             pinkFishGenerator.addMonkeyPool(new Vector3(transform.position.x, 2.5f, transform.position.z));
             showMonkey = false;
             showMonkeyFirstTime = false;
-            monkeyAdded = true;
         }
         else if (showTurtle)
         {
             pinkFishGenerator.addTurtlePool(new Vector3(transform.position.x, 2.5f, transform.position.z));
             showTurtle = false;
             showTurtleFirstTime = false;
-            turtleAdded = true;
         }
         else
         {

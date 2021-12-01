@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private ScoreManager scoreManager;
 
     public DeathMenu deathMenu;
-
+    public AudioSource music;
 
     private void Start()
     {
@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         playerStartPoint = player.transform.position;
         scoreManager = FindObjectOfType<ScoreManager>();
         platformGeneratorScript = FindObjectOfType<PlatformGenerator>();
+        music = GameObject.Find("AudioManager").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
         scoreManager.scoreIncreasing = false;
         player.gameObject.SetActive(false);
         deathMenu.gameObject.SetActive(true);
+        music.Play();
     }
 
     public void Reset() 
@@ -55,6 +57,6 @@ public class GameManager : MonoBehaviour
         platformGeneratorScript.showBirdFirstTime = true;
         platformGeneratorScript.showMonkeyFirstTime = true;
         platformGeneratorScript.showTurtleFirstTime = true;
-
+        music.Play();
     }
 }
