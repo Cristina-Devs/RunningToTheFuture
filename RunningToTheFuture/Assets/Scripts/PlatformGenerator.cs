@@ -15,8 +15,8 @@ public class PlatformGenerator : MonoBehaviour
 
     // levels of dificulty
     private float easyBarrier = 1000f;
-    private float normalBarrier = 2000f;
-    private float hardBarrier = 3000f;
+    private float normalBarrier = 3000f;
+    private float hardBarrier = 5000f;
 
     //flag-points
     private bool spikeAdded;
