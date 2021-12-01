@@ -17,8 +17,8 @@ public class PlatformGenerator : MonoBehaviour
     private bool spikeAdded;
     private bool fishesAdded;
     private bool showMonkey;
-    private bool showMonkeyFirstTime;
     private bool monkeyAdded;
+    public bool showMonkeyFirstTime;
 
     //public GameObject[] platforms;  //8
     private int platformSelector;
@@ -73,14 +73,14 @@ public class PlatformGenerator : MonoBehaviour
         //leftEdge = transform.position.x - movementDistance;
         //rightEdge = transform.position.x + movementDistance;
         showMonkey = false;
-        showMonkeyFirstTime = false;
+        showMonkeyFirstTime = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         spikeAdded = false;
-        if (scoreManager.scoreCount > 1000 && !showMonkeyFirstTime) 
+        if (scoreManager.scoreCount > 1000 && showMonkeyFirstTime) 
             showMonkey = true;
 
         if (transform.position.x < generationPoint.position.x)
@@ -112,7 +112,7 @@ public class PlatformGenerator : MonoBehaviour
                 {
                     pinkFishGenerator.addMonkeyPool(new Vector3(transform.position.x, 2.2f, transform.position.z));
                     showMonkey = false;
-                    showMonkeyFirstTime = true;
+                    showMonkeyFirstTime = false;
                     monkeyAdded = true;
                 } else {
                     pinkFishGenerator.SpawnFishes(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));

@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Transform platformGenerator;
+    public PlatformGenerator platformGeneratorScript;
     private Vector3 platformStartPoint;
 
     public PlayerMovement player;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         platformStartPoint = platformGenerator.position;
         playerStartPoint = player.transform.position;
         scoreManager = FindObjectOfType<ScoreManager>();
+        platformGeneratorScript = FindObjectOfType<PlatformGenerator>();
     }
 
     // Update is called once per frame
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
 
         scoreManager.scoreCount = 0;
         scoreManager.scoreIncreasing = true;
+        platformGeneratorScript.showMonkeyFirstTime = true;
 
     }
 }
