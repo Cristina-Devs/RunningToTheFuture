@@ -6,10 +6,20 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public string playGameLevel;
+    public string onBoarding;
+    private bool firstTime = true;
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(playGameLevel);
+        //if first time, open onboarding, 
+        if (firstTime)
+        {
+            SceneManager.LoadScene(onBoarding);
+        }
+        else 
+        {
+            SceneManager.LoadScene(playGameLevel);
+        }
     }    
     
     public void QuitGame()
