@@ -114,7 +114,7 @@ public class PlatformGenerator : MonoBehaviour
 
             // just after some random fishes, we are gonna add some random spikes:
             if (UnityEngine.Random.Range(0f, 100f) < randomSpikeThreshold && !isPlatformWithGravity(newPlatform) &&
-                (scoreManager.scoreCount > firstBarrier && scoreManager.scoreCount < secondBarrier) || (scoreManager.scoreCount > hardBarrier))
+                ((scoreManager.scoreCount > firstBarrier && scoreManager.scoreCount < secondBarrier) || (scoreManager.scoreCount > hardBarrier)))
             {
                 GameObject newSpike = spikePool.GetPooledObject();
                 // to make appear it in the long of the width platform, we use (-3, +3) for instance:
