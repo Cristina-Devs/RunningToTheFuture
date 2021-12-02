@@ -14,8 +14,8 @@ public class PlatformGenerator : MonoBehaviour
     public float distanceBetweenMax;
 
     // levels of dificulty
-    private float easyBarrier = 1000f;
-    private float normalBarrier = 3000f;
+    private float firstBarrier = 1000f;
+    private float secondBarrier = 3000f;
     private float hardBarrier = 5000f;
 
     //flag-points
@@ -113,7 +113,8 @@ public class PlatformGenerator : MonoBehaviour
             }
 
             // just after some random fishes, we are gonna add some random spikes:
-            if (UnityEngine.Random.Range(0f, 100f) < randomSpikeThreshold)
+            if (UnityEngine.Random.Range(0f, 100f) < randomSpikeThreshold && newPlatform.tag != "platformWithGravity" 
+                && (scoreManager.scoreCount > firstBarrier && scoreManager.scoreCount < secondBarrier) || (scoreManager.scoreCount > hardBarrier))
             {
                 GameObject newSpike = spikePool.GetPooledObject();
                 // to make appear it in the long of the width platform, we use (-3, +3) for instance:
@@ -128,7 +129,7 @@ public class PlatformGenerator : MonoBehaviour
             }
 
             // Start appearing not only spikes but also saws
-            if (scoreManager.scoreCount > easyBarrier && !spikeAdded && fishesAdded && shouldShowSaw())
+            if (scoreManager.scoreCount > secondBarrier && fishesAdded && !spikeAdded && shouldShowSaw())
             {
                 GameObject newSaw = spikePoolMovement.GetPooledObject();
                 Vector3 sawPosition = new Vector3(0f, 0.5f, 0f);
@@ -170,10 +171,10 @@ public class PlatformGenerator : MonoBehaviour
 
     void checkIfAnimalsShouldBeShown()
     {
-        if (scoreManager.scoreCount > easyBarrier && showBirdFirstTime)
+        if (scoreManager.scoreCount > firstBarrier && showBirdFirstTime)
             showBird = true;
 
-        if (scoreManager.scoreCount > normalBarrier && showMonkeyFirstTime)
+        if (scoreManager.scoreCount > secondBarrier && showMonkeyFirstTime)
             showMonkey = true;
 
         if (scoreManager.scoreCount > hardBarrier && showTurtleFirstTime)
@@ -211,4 +212,16 @@ public class PlatformGenerator : MonoBehaviour
     {
         return UnityEngine.Random.Range(0f, 100f) < randomSawsThreshold;
     }
+
+    /*
+     * peces siempre
+        de 0 a 1500 -> plataformas que caen
+        de 1500 a 3000 -> pinchos (con peces?)  (en 1500 entra el pajaro)
+        de 3000 a 5000 -> ruedas y quito los pinchos ( en 3000 entra el mono)
+        ---------- 5000 volverian a entrar los pinchos¿? ( en 5000 entra la tortuga)
+
+        de 5000 a 7500 -> vuelvo a meter pinchos solo (sin rueda)
+        de 7500 a 10.000 -> vuelvo a meter ruedas
+        de > 10.000 todo 
+        */
 }
