@@ -4815,7 +4815,7 @@ MonoBehaviour:
   - {fileID: 1894563173}
   - {fileID: 1146086543}
   maxHeightPoint: {fileID: 593272793}
-  maxHeightChange: 6
+  maxHeightChange: 3
   randomFishTreshold: 65
   randomSpikeThreshold: 30
   spikePool: {fileID: 1619708498}
