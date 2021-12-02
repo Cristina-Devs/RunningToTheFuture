@@ -9,6 +9,7 @@ public class DeathMenu : MonoBehaviour
     public string mainMenuLevel;
     private ScoreManager scoreManager;
     public Text pointsText;
+    public InputField inputField;
 
     public void Start()
     {
@@ -33,7 +34,7 @@ public class DeathMenu : MonoBehaviour
     }
     public void SaveDataInRanking()
     {
-        Highscores.AddNewHighScore("prueba", 123);
+        Highscores.AddNewHighScore(inputField.text, (int)Mathf.Round(scoreManager.scoreCount));
         saveScoreInPlayerPrefs();
     }
 

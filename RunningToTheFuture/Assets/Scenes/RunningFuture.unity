@@ -511,6 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuLevel: MainMenu
   pointsText: {fileID: 924789599}
+  inputField: {fileID: 277245617}
 --- !u!1 &116009811
 GameObject:
   m_ObjectHideFlags: 0
