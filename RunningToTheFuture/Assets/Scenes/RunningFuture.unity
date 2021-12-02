@@ -1703,7 +1703,7 @@ GameObject:
   - component: {fileID: 786814017}
   m_Layer: 6
   m_Name: Catcher
-  m_TagString: Untagged
+  m_TagString: killbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3077,7 +3077,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 16f6cf4aa9db2f34da6333180e06b9a5, type: 3}
+    m_Font: {fileID: 12800000, guid: c0d1ecb224a7b7840a771d42032eeb37, type: 3}
     m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
@@ -3098,6 +3098,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112748892}
   m_CullTransparentMesh: 1
+--- !u!1 &1146086541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146086542}
+  - component: {fileID: 1146086543}
+  m_Layer: 0
+  m_Name: ObjectPooler (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1146086542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146086541}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -93.68851, y: -1.0439857, z: 9.477367}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1843508733}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1146086543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146086541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9cdfaa9d0d86e458da8187a84da20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 8333493594559306053, guid: 5f92efc1cb481fe4eae9f2204ab0f8f0, type: 3}
+  pooledAmount: 5
 --- !u!1 &1149238275
 GameObject:
   m_ObjectHideFlags: 0
@@ -4088,7 +4133,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 16f6cf4aa9db2f34da6333180e06b9a5, type: 3}
+    m_Font: {fileID: 12800000, guid: c0d1ecb224a7b7840a771d42032eeb37, type: 3}
     m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
@@ -4366,7 +4411,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 16f6cf4aa9db2f34da6333180e06b9a5, type: 3}
+    m_Font: {fileID: 12800000, guid: c0d1ecb224a7b7840a771d42032eeb37, type: 3}
     m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
@@ -4500,6 +4545,7 @@ Transform:
   - {fileID: 2089002920}
   - {fileID: 2112954051}
   - {fileID: 1894563172}
+  - {fileID: 1146086542}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4686,6 +4732,7 @@ MonoBehaviour:
   - {fileID: 2089002921}
   - {fileID: 2112954052}
   - {fileID: 1894563173}
+  - {fileID: 1146086543}
   maxHeightPoint: {fileID: 593272793}
   maxHeightChange: 6
   randomFishTreshold: 65

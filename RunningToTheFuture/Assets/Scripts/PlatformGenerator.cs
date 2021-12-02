@@ -104,7 +104,7 @@ public class PlatformGenerator : MonoBehaviour
 
             //justo despues de que se haya generado la  nueva plataforma, PERO 
             //justo antes de que el generador se mueva hasta la punta de la plataforma para seguir generando
-            //generamos los peces (3), en el centro pero un poco más arriba de la plataforma no en el suelo (1f)
+            //generamos los peces (3), spikes, saws, en el centro pero un poco más arriba de la plataforma no en el suelo (1f)
             //y de forma aleatoria, no siempre
             fishesAdded = false;
             if (UnityEngine.Random.Range(0f, 100f) < randomFishTreshold)

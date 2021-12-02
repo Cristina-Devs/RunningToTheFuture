@@ -96,7 +96,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
              jumpTimeCounter = 0;

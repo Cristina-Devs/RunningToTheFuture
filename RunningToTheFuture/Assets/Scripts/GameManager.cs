@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(true);
 
         scoreManager.scoreCount = 0;
+        scoreManager.animalsCount = 0;
         scoreManager.scoreIncreasing = true;
         platformGeneratorScript.showBirdFirstTime = true;
         platformGeneratorScript.showMonkeyFirstTime = true;
