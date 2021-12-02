@@ -10,6 +10,7 @@ public class DeathMenu : MonoBehaviour
     private ScoreManager scoreManager;
     public Text pointsText;
     public InputField inputField;
+    public Button saveDataButton;
 
     public void Start()
     {
@@ -19,6 +20,12 @@ public class DeathMenu : MonoBehaviour
     public void Update()
     {
         pointsText.text = "You got " + Mathf.Round(scoreManager.scoreCount) + " points!";
+    }
+
+    public void OnEnable()
+    {
+        inputField.interactable = true;
+        saveDataButton.interactable = true;
     }
 
     public void RestartGame()
@@ -34,6 +41,8 @@ public class DeathMenu : MonoBehaviour
     }
     public void SaveDataInRanking()
     {
+        inputField.interactable = false;
+        saveDataButton.interactable = false;
         Highscores.AddNewHighScore(inputField.text, (int)Mathf.Round(scoreManager.scoreCount));
         saveScoreInPlayerPrefs();
     }
@@ -43,6 +52,5 @@ public class DeathMenu : MonoBehaviour
         float currentScore = scoreManager.highScoreCount;
         PlayerPrefs.SetFloat("savedScore", currentScore);
     }
-
 
 }
