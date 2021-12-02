@@ -514,6 +514,7 @@ MonoBehaviour:
   mainMenuLevel: MainMenu
   pointsText: {fileID: 924789599}
   inputField: {fileID: 277245617}
+  saveDataButton: {fileID: 565632384}
 --- !u!1 &116009811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,7 +2356,7 @@ GameObject:
   - component: {fileID: 786814017}
   m_Layer: 6
   m_Name: Catcher
-  m_TagString: Untagged
+  m_TagString: killbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
