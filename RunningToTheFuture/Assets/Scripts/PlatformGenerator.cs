@@ -113,8 +113,8 @@ public class PlatformGenerator : MonoBehaviour
             }
 
             // just after some random fishes, we are gonna add some random spikes:
-            if (UnityEngine.Random.Range(0f, 100f) < randomSpikeThreshold && newPlatform.tag != "platformWithGravity" 
-                && (scoreManager.scoreCount > firstBarrier && scoreManager.scoreCount < secondBarrier) || (scoreManager.scoreCount > hardBarrier))
+            if (UnityEngine.Random.Range(0f, 100f) < randomSpikeThreshold && !isPlatformWithGravity(newPlatform) &&
+                (scoreManager.scoreCount > firstBarrier && scoreManager.scoreCount < secondBarrier) || (scoreManager.scoreCount > hardBarrier))
             {
                 GameObject newSpike = spikePool.GetPooledObject();
                 // to make appear it in the long of the width platform, we use (-3, +3) for instance:
@@ -129,7 +129,7 @@ public class PlatformGenerator : MonoBehaviour
             }
 
             // Start appearing not only spikes but also saws
-            if (scoreManager.scoreCount > secondBarrier && fishesAdded && !spikeAdded && shouldShowSaw())
+            if (scoreManager.scoreCount > secondBarrier && fishesAdded && !spikeAdded && shouldShowSaw() && !isPlatformWithGravity(newPlatform))
             {
                 GameObject newSaw = spikePoolMovement.GetPooledObject();
                 Vector3 sawPosition = new Vector3(0f, 0.5f, 0f);
@@ -143,6 +143,10 @@ public class PlatformGenerator : MonoBehaviour
         }
     }
 
+    bool isPlatformWithGravity(GameObject newPlatform) 
+    {
+        return newPlatform.tag == "platformWithGravity";
+    }
     void setupPlatformsHeight()
     {
         //poner las plataformas a la altura
