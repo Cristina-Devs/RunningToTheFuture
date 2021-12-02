@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OnBoarding.unity
     guid: 8c1d256b7b0e66d4b9d559f604493ca4
   - enabled: 1
+    path: Assets/Scenes/LeaderBoard.unity
+    guid: c0056ab758340cc439960168a2715c5f
+  - enabled: 1
     path: Assets/Scenes/RunningFuture.unity
     guid: 23f13c7d8d020984a86a035c8276fdcc
   m_configObjects: {}

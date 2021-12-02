@@ -6,9 +6,15 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    // Scenes to navigate 
     public string playGameLevel;
     public string onBoarding;
+    public string leaderBoard;
+
+    // Flag to show onboarding first time
     private bool firstTime = true;
+
+    // Sound button
     public Button buttonMusic;
     public bool soundActive;
     public Sprite enabledMusicSprite;
@@ -53,8 +59,8 @@ public class MainMenu : MonoBehaviour
     }
 
     public void RankingTapped()
-    {
-        Application.Quit();
+    {  
+        SceneManager.LoadScene(leaderBoard);
     }
     public void ToggleSound()
     {

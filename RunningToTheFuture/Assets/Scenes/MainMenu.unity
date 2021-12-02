@@ -547,6 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playGameLevel: RunningFuture
   onBoarding: OnBoarding
+  leaderBoard: LeaderBoard
   buttonMusic: {fileID: 50316783}
   soundActive: 1
   enabledMusicSprite: {fileID: 21300000, guid: 05b36a526ceaf9c4ca683d7f9e9108d3, type: 3}
