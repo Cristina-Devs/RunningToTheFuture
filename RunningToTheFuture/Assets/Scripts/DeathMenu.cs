@@ -31,11 +31,17 @@ public class DeathMenu : MonoBehaviour
         SceneManager.LoadScene(mainMenuLevel);
         saveScoreInPlayerPrefs();
     }
+    public void SaveDataInRanking()
+    {
+        Highscores.AddNewHighScore("prueba", 123);
+        saveScoreInPlayerPrefs();
+    }
 
     public void saveScoreInPlayerPrefs()
     {
         float currentScore = scoreManager.highScoreCount;
         PlayerPrefs.SetFloat("savedScore", currentScore);
     }
+
 
 }
