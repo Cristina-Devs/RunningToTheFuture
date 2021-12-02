@@ -130,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
             music.Stop();
             deathSound.Play();
         }
+
         //grounded = true;
     }
 
