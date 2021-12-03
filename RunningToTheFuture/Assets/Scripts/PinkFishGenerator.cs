@@ -5,25 +5,54 @@ using UnityEngine;
 public class PinkFishGenerator : MonoBehaviour
 {
     public ObjectPooler pinkFishPool;
+    //animals
     public ObjectPooler birdPool;
     public ObjectPooler monkeyPool;
     public ObjectPooler turtlePool;
+
+    //fruits
+    public ObjectPooler strawberryPool;
+    public ObjectPooler melonPool;
+    public ObjectPooler bananaPool;
+    public ObjectPooler pineapplePool;
+
     public float distanceBetweenFishes;
 
     public void SpawnFishes(Vector3 startPosition) 
     {
-        GameObject fish1 = pinkFishPool.GetPooledObject();
+        print("inside SpawnFishes");
+        ObjectPooler pooler = getRandomFruit();
+
+        GameObject fish1 = pooler.GetPooledObject();
         fish1.transform.position = startPosition;
         fish1.SetActive(true);
 
-        GameObject fish2 = pinkFishPool.GetPooledObject();
+        GameObject fish2 = pooler.GetPooledObject();
         fish2.transform.position = new Vector3(startPosition.x - distanceBetweenFishes, startPosition.y, startPosition.z);
         fish2.SetActive(true);
 
-        GameObject fish3 = pinkFishPool.GetPooledObject();
+        GameObject fish3 = pooler.GetPooledObject();
         fish3.transform.position = new Vector3(startPosition.x + distanceBetweenFishes, startPosition.y, startPosition.z);
         fish3.SetActive(true);
 
+    }
+
+    public ObjectPooler getRandomFruit() {
+
+        int random = UnityEngine.Random.Range(1, 5);
+        if (random == 1) {
+            return strawberryPool;
+        }
+        else if (random == 2) {
+            return melonPool;
+        }
+        else if (random == 3) {
+            return bananaPool;
+        }
+        else
+        {
+            return pineapplePool;
+        }
     }
 
     public void addBirdPool(Vector3 startPosition)

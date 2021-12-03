@@ -207,6 +207,7 @@ public class PlatformGenerator : MonoBehaviour
         }
         else
         {
+            print("inside SpawnFishes");
             pinkFishGenerator.SpawnFishes(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
             fishesAdded = true;
         }
