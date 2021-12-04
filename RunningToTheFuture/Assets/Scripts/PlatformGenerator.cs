@@ -111,7 +111,7 @@ public class PlatformGenerator : MonoBehaviour
             fishesAdded = false;
             if (UnityEngine.Random.Range(0f, 100f) < randomFishTreshold)
             {
-                showFishesOrCagedAnimals();
+                showFishesOrCagedAnimals(isPlatformWithGravity(newPlatform));
 
                 if (!fishesAdded) { //some animal has been added!
                     GameObject newEnemy = enemyMovement.GetPooledObject();
@@ -195,7 +195,7 @@ public class PlatformGenerator : MonoBehaviour
             showTurtle = true;
     }
 
-    void showFishesOrCagedAnimals()
+    void showFishesOrCagedAnimals(bool platformGravity)
     {
         if (showBird)
         {
@@ -217,8 +217,8 @@ public class PlatformGenerator : MonoBehaviour
         }
         else
         {
-            print("inside SpawnFishes");
-            pinkFishGenerator.SpawnFishes(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
+            float xPosition = platformGravity ? transform.position.x - 0.4f : transform.position.x;
+            pinkFishGenerator.SpawnFishes(new Vector3(xPosition, transform.position.y + 1f, transform.position.z));
             fishesAdded = true;
         }
     }
