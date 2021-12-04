@@ -18,12 +18,25 @@ public class Highscores : MonoBehaviour
 
     private void Awake()
     {
-        //clearScores();
         instance = this;
         highscoresDisplay = GetComponent<DisplayHighscores>();
-        //AddNewHighScore("Cristina", 0);
-        //AddNewHighScore("pepe", 0);
+        //beautifyRanking();
         //DownloadHighScores();
+    }
+
+    public void beautifyRanking()
+    {
+        clearScores();
+        AddNewHighScore("Cristina", 6899);
+        AddNewHighScore("Marie", 6456);
+        AddNewHighScore("Anna", 5298);
+        AddNewHighScore("Ada", 5035);
+        AddNewHighScore("Virginia", 4902);
+        AddNewHighScore("Rose", 4785);
+        AddNewHighScore("Clara", 3988);
+        AddNewHighScore("Victoria", 3459);
+        AddNewHighScore("Simone", 2684);
+        AddNewHighScore("Dolores", 1250);
     }
 
     public static void AddNewHighScore(string username, int score)
