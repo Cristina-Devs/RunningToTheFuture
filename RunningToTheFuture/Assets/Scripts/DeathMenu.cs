@@ -43,11 +43,13 @@ public class DeathMenu : MonoBehaviour
     {
         FindObjectOfType<GameManager>().Reset();
         saveScoreInPlayerPrefs();
+        //GameObject.FindGameObjectWithTag("MusicPlaying").GetComponent<MusicClass>().RestartMusic();
     }
 
     public void QuitToMainMenu()
     {
         SceneManager.LoadScene(mainMenuLevel);
+        GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().PlayMusicIfWasPlaying();
         saveScoreInPlayerPrefs();
     }
     public void SaveDataInRanking()

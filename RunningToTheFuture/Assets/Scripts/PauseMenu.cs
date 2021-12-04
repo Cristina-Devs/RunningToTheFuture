@@ -27,11 +27,13 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         FindObjectOfType<GameManager>().Reset();
+        //GameObject.FindGameObjectWithTag("MusicPlaying").GetComponent<MusicClass>().RestartMusic();
     }
 
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuLevel);
+        GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().PlayMusicIfWasPlaying();
     }
 }

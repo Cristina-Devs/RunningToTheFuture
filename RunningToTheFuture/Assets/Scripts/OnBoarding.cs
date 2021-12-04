@@ -10,7 +10,8 @@ public class OnBoarding : MonoBehaviour
 
     public void PlayGame()
     {
-         SceneManager.LoadScene(playGameLevel);
+        GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().StopMusic();
+        SceneManager.LoadScene(playGameLevel);
     }
 
     public void BackGame()

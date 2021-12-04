@@ -8,6 +8,7 @@ TagManager:
   - Border
   - killbox
   - platformWithGravity
+  - MusicIntro
   layers:
   - Default
   - TransparentFX

@@ -16,19 +16,19 @@ public class MainMenu : MonoBehaviour
 
     // Sound button
     public Button buttonMusic;
-    public bool soundActive;
+    //public bool soundActive;
     public Sprite enabledMusicSprite;
     public Sprite disabledMusicSprite;
 
     public void Start()
     {
-        //soundActive = intToBool(PlayerPrefs.GetInt("soundActive"));
-        updateMusicButtonImage();
+        //GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().PlayMusic();
     }
 
     public void Update()
     {
-        updateMusicButtonImage();
+        bool soundActive = GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().IsPlayingMusic();
+        updateMusicButtonImage(soundActive);
     }
 
     public void PlayGame()
@@ -40,6 +40,7 @@ public class MainMenu : MonoBehaviour
         }
         else 
         {
+            GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().StopMusic();
             SceneManager.LoadScene(playGameLevel);
         }
     } 
@@ -53,6 +54,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(onBoarding);
     }
+    
     public void MusicTapped()
     {
         ToggleSound();
@@ -62,41 +64,27 @@ public class MainMenu : MonoBehaviour
     {  
         SceneManager.LoadScene(leaderBoard);
     }
+    
     public void ToggleSound()
     {
+        bool soundActive = GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().IsPlayingMusic();
         soundActive = !soundActive;
-        //PlayerPrefs.SetInt("soundActive", boolToInt(soundActive));
-        updateMusicButtonImage();
-
+        updateMusicButtonImage(soundActive);
     }
-
-    public void updateMusicButtonImage()
+    
+    public void updateMusicButtonImage(bool soundActive)
     {
         if (soundActive)
         {
+            GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().PlayMusic();
             buttonMusic.gameObject.GetComponent<Image>().sprite = enabledMusicSprite;
             AudioListener.volume = 1f;
         }
         else
         {
+            GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().StopMusic();
             buttonMusic.gameObject.GetComponent<Image>().sprite = disabledMusicSprite;
             AudioListener.volume = 0f;
         }
-    }
-    
-    int boolToInt(bool val)
-    {
-        if (val)
-            return 1;
-        else
-            return 0;
-    }
-
-    bool intToBool(int val)
-    {
-        if (val != 0)
-            return true;
-        else
-            return false;
     }
 }
