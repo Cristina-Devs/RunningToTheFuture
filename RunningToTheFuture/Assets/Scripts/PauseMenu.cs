@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         FindObjectOfType<GameManager>().Reset();
-        //GameObject.FindGameObjectWithTag("MusicPlaying").GetComponent<MusicClass>().RestartMusic();
+        //GameObject.FindGameObjectWithTag("MusicRunning").GetComponent<MusicClass>().RestartMusic();
     }
 
     public void QuitToMainMenu()

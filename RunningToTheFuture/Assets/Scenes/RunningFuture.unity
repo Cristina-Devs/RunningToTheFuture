@@ -3456,7 +3456,6 @@ MonoBehaviour:
   gameManager: {fileID: 1149238276}
   jumpSound: {fileID: 36163710}
   deathSound: {fileID: 1482984899}
-  music: {fileID: 0}
 --- !u!1 &935727330
 GameObject:
   m_ObjectHideFlags: 0
@@ -4480,7 +4479,6 @@ MonoBehaviour:
   platformGeneratorScript: {fileID: 0}
   player: {fileID: 925724637}
   deathMenu: {fileID: 78119362}
-  music: {fileID: 0}
 --- !u!4 &1149238277
 Transform:
   m_ObjectHideFlags: 0
@@ -4896,7 +4894,7 @@ GameObject:
   - component: {fileID: 1332902462}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: MusicRunning
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

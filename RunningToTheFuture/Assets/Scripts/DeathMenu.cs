@@ -42,28 +42,28 @@ public class DeathMenu : MonoBehaviour
     public void RestartGame()
     {
         FindObjectOfType<GameManager>().Reset();
-        saveScoreInPlayerPrefs();
-        //GameObject.FindGameObjectWithTag("MusicPlaying").GetComponent<MusicClass>().RestartMusic();
+        //GameObject.FindGameObjectWithTag("MusicRunning").GetComponent<MusicClass>().RestartMusic();
+        scoreManager.saveScoreInPlayerPrefs();
     }
 
     public void QuitToMainMenu()
     {
         SceneManager.LoadScene(mainMenuLevel);
         GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().PlayMusicIfWasPlaying();
-        saveScoreInPlayerPrefs();
+        scoreManager.saveScoreInPlayerPrefs();
     }
     public void SaveDataInRanking()
     {
         inputField.interactable = false;
         saveDataButton.interactable = false;
         Highscores.AddNewHighScore(inputField.text, (int)Mathf.Round(scoreManager.scoreCount));
-        saveScoreInPlayerPrefs();
+        scoreManager.saveScoreInPlayerPrefs();
     }
 
     public void saveScoreInPlayerPrefs()
     {
         float currentScore = scoreManager.highScoreCount;
-        PlayerPrefs.SetFloat("savedScore", currentScore);
+        scoreManager.saveScoreInPlayerPrefs();
     }
 
 }

@@ -9,6 +9,7 @@ TagManager:
   - killbox
   - platformWithGravity
   - MusicIntro
+  - MusicRunning
   layers:
   - Default
   - TransparentFX

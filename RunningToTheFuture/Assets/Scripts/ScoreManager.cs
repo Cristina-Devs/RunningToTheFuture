@@ -51,7 +51,30 @@ public class ScoreManager : MonoBehaviour
 
     public float getScoreFromPlayerPrefs() 
     {
+        if (itsFirstTimeOpenning()) {
+            PlayerPrefs.SetFloat("savedScore", 0);
+            return 0;
+        }
         savedScore = PlayerPrefs.GetFloat("savedScore");
         return savedScore;
+    }
+
+    public void saveScoreInPlayerPrefs() {
+        PlayerPrefs.SetFloat("savedScore", highScoreCount);
+    }
+
+    public bool itsFirstTimeOpenning()
+    {
+        if (PlayerPrefs.GetInt("FIRSTTIMEOPENING", 1) == 1)
+        {
+            Debug.Log("First Time Opening");
+
+            //Set first time opening to false
+            PlayerPrefs.SetInt("FIRSTTIMEOPENING", 0);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
