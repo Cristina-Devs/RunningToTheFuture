@@ -52,6 +52,8 @@ public class PlatformGenerator : MonoBehaviour
     // saws
     public float randomSawsThreshold;
     public ObjectPooler spikePoolMovement;
+    public ObjectPooler enemyMovement;
+
     private ScoreManager scoreManager;
     public float movementDistance;
     public float speed;
@@ -110,6 +112,14 @@ public class PlatformGenerator : MonoBehaviour
             if (UnityEngine.Random.Range(0f, 100f) < randomFishTreshold)
             {
                 showFishesOrCagedAnimals();
+
+                if (!fishesAdded) { //some animal has been added!
+                    GameObject newEnemy = enemyMovement.GetPooledObject();
+                    //Vector3 enemyPosition = new Vector3(transform.position.x - 2f, 2.3f, transform.position.z);
+                    newEnemy.transform.position = new Vector3(transform.position.x - 2f, 2.3f, transform.position.z);
+                    newEnemy.transform.rotation = transform.rotation;
+                    newEnemy.SetActive(true);
+                }
             }
 
             // just after some random fishes, we are gonna add some random spikes:
