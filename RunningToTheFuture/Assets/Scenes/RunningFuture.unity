@@ -2059,7 +2059,6 @@ MonoBehaviour:
   strawberryPool: {fileID: 1156869482}
   melonPool: {fileID: 1856304313}
   bananaPool: {fileID: 801075048}
-  pineapplePool: {fileID: 1821953920}
   distanceBetweenFishes: 1.5
 --- !u!1 &627094641
 GameObject:
@@ -2364,7 +2363,7 @@ GameObject:
   - component: {fileID: 786814017}
   m_Layer: 6
   m_Name: Catcher
-  m_TagString: Untagged
+  m_TagString: killbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3234,7 +3233,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -4.4571, y: 173}
-  m_SizeDelta: {x: 703.5651, y: 80}
+  m_SizeDelta: {x: 1000, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &924789599
 MonoBehaviour:
@@ -3269,8 +3268,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Congrats! You got {0} points! Write your name and see if you are in the
-    TOP 10 players
+  m_Text: 'Congrats: {0} points &  {0}/3 animals!'
 --- !u!222 &924789600
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6693,7 +6691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1821953919
 Transform:
   m_ObjectHideFlags: 0
@@ -7305,7 +7303,7 @@ MonoBehaviour:
   - {fileID: 1894563173}
   - {fileID: 1146086543}
   maxHeightPoint: {fileID: 593272793}
-  maxHeightChange: 0
+  maxHeightChange: 3
   randomFishTreshold: 65
   randomSpikeThreshold: 30
   spikePool: {fileID: 1619708498}
@@ -7671,7 +7669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Write your name to share your score:'
+  m_Text: 'Write your name to share your score:'
 --- !u!222 &2037779507
 CanvasRenderer:
   m_ObjectHideFlags: 0

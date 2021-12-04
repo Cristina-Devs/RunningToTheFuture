@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 public class OnBoarding : MonoBehaviour
 {
     public string playGameLevel;
+    public string mainScene;
 
     public void PlayGame()
     {
-        //if first time, open onboarding, 
          SceneManager.LoadScene(playGameLevel);
     }
 
+    public void BackGame()
+    {
+        SceneManager.LoadScene(mainScene);
+    }
 }

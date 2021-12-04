@@ -14,7 +14,7 @@ public class PinkFishGenerator : MonoBehaviour
     public ObjectPooler strawberryPool;
     public ObjectPooler melonPool;
     public ObjectPooler bananaPool;
-    public ObjectPooler pineapplePool;
+    //public ObjectPooler pineapplePool;
 
     public float distanceBetweenFishes;
 
@@ -46,13 +46,13 @@ public class PinkFishGenerator : MonoBehaviour
         else if (random == 2) {
             return melonPool;
         }
-        else if (random == 3) {
+        else {
             return bananaPool;
         }
-        else
+        /*else
         {
             return pineapplePool;
-        }
+        }*/
     }
 
     public void addBirdPool(Vector3 startPosition)

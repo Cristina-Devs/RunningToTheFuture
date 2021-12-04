@@ -19,7 +19,18 @@ public class DeathMenu : MonoBehaviour
 
     public void Update()
     {
-        pointsText.text = "You got " + Mathf.Round(scoreManager.scoreCount) + " points!";
+        float animals = Mathf.Round(scoreManager.animalsCount);
+
+        if (animals == 1) {
+            pointsText.text = "Congrats: " + Mathf.Round(scoreManager.scoreCount) + " points  and " + animals + "/3 animals rescued!";
+        } else if (animals == 2)
+        {
+            pointsText.text = "Goood: " + Mathf.Round(scoreManager.scoreCount) + " points  and " + animals + "/3 animals rescued!";
+        }
+        else if (animals == 3)
+        {
+            pointsText.text = "Wooow: " + Mathf.Round(scoreManager.scoreCount) + " points  and " + animals + "/3 animals rescued!";
+        }
     }
 
     public void OnEnable()
