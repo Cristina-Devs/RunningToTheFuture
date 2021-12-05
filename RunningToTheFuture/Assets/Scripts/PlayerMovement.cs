@@ -30,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
     //private Collider2D myCollider;
     private Animator anim;
 
+    // Sounds
+    public AudioSource jumpSound;
+    public AudioSource deathSound;
+    //public AudioSource music;
+
     void Start()
     {
         //references for ridigbody and animator from object
@@ -42,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
         speedMiletoneCountStore = speedMilestoneCount;
         speedIncreaseMilestoneStore = speedIncreaseMilestone;
         stoppedJumping = true;
+        jumpSound = GameObject.Find("JumpSound").GetComponent<AudioSource>();
+        //music = GameObject.Find("AudioManager").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -68,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Jump();
                 stoppedJumping = false;
+                jumpSound.Play();
             }
             if (!grounded && canDoubleJump)
             {
@@ -75,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
                 jumpTimeCounter = jumpTime;
                 stoppedJumping = false;
                 canDoubleJump = false;
+                jumpSound.Play();
             }
         }
 
@@ -86,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
                 jumpTimeCounter -= Time.deltaTime;
             }
         }
-
 
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
@@ -119,8 +127,10 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = moveSpeedStore;
             speedMilestoneCount = speedMiletoneCountStore;
             speedIncreaseMilestone = speedIncreaseMilestoneStore;
-
+            //music.Stop();
+            deathSound.Play();
         }
+
         //grounded = true;
     }
 

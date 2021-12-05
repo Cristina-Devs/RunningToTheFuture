@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Transform platformGenerator;
+    public PlatformGenerator platformGeneratorScript;
     private Vector3 platformStartPoint;
 
     public PlayerMovement player;
@@ -14,13 +15,15 @@ public class GameManager : MonoBehaviour
     private ScoreManager scoreManager;
 
     public DeathMenu deathMenu;
-
+    //public AudioSource music;
 
     private void Start()
     {
         platformStartPoint = platformGenerator.position;
         playerStartPoint = player.transform.position;
         scoreManager = FindObjectOfType<ScoreManager>();
+        platformGeneratorScript = FindObjectOfType<PlatformGenerator>();
+        //music = GameObject.Find("AudioManager").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class GameManager : MonoBehaviour
         scoreManager.scoreIncreasing = false;
         player.gameObject.SetActive(false);
         deathMenu.gameObject.SetActive(true);
+       // music.Play();
     }
 
     public void Reset() 
@@ -49,7 +53,11 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(true);
 
         scoreManager.scoreCount = 0;
+        scoreManager.animalsCount = 0;
         scoreManager.scoreIncreasing = true;
-
+        platformGeneratorScript.showBirdFirstTime = true;
+        platformGeneratorScript.showMonkeyFirstTime = true;
+        platformGeneratorScript.showTurtleFirstTime = true;
+        //music.Play();
     }
 }

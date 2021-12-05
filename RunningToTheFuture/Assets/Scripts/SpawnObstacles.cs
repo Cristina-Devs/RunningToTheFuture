@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnObstacles : MonoBehaviour
 {
-    public GameObject bottleObstacle;
+    /*public GameObject bottleObstacle;
     public float maxX, minX;
     public float timeBetweenSpawn;
     private float spawnTime;
@@ -28,5 +28,5 @@ public class SpawnObstacles : MonoBehaviour
         float randomX = Random.Range(minX, maxX);
 
         Instantiate(bottleObstacle, transform.position + new Vector3(randomX, initialY, 0), transform.rotation);
-    }
+    }*/
 }

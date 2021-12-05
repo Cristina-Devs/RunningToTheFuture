@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleBottle : MonoBehaviour
-{
+{/*
     private GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -17,5 +17,5 @@ public class ObstacleBottle : MonoBehaviour
             Destroy(this.gameObject);
         else if (collision.tag == "Player")
             Destroy(player.gameObject);
-    }
+    }*/
 }
