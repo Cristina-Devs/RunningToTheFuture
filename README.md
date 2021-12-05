@@ -13,4 +13,12 @@ https://www.wevideo.com/view/2430068949
 
 L'executable (apk per Android) es pot trobar a la carpeta "PAC2 - Versio Parcial" d'aquest repositori.
 
+
+PAC 2 - Versió parcial del Joc:
+
+Enllaç al video explicatiu del Joc: 
+https://youtu.be/PKD096wgrK0
+
+L'executable (apk per Android) es pot trobar a la carpeta "PAC3 - Versio Jugable" d'aquest repositori.
+
 Cristina Saura Pérez
