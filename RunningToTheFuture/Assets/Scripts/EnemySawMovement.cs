@@ -15,8 +15,6 @@ public class EnemySawMovement : MonoBehaviour
     {
         leftEdge = transform.position.x - movementDistance;
         rightEdge = transform.position.x + movementDistance;
-        //Debug.Log("Starttttt leftEdge: " + leftEdge);
-        //Debug.Log("Starttttt rightEdge: " + rightEdge);
     }
 
     private void OnEnable()
@@ -41,30 +39,24 @@ public class EnemySawMovement : MonoBehaviour
 
     void goMoveLeft() 
     {
-        //Debug.Log("-- goMoveLeft ? -- transform.position.x > leftEdge: " + transform.position.x);
         if (transform.position.x > leftEdge)
         {
-            //Debug.Log("-- goMoveLeft -- YES");
             transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         else
         {
-            //Debug.Log("-- goMoveLeft -- NOUP");
             movingLeft = false;
         }
     }
 
     void goMoveRight()
     {
-        //Debug.Log("-- goMoveRight ? -- transform.position.x < rightEdge: " + transform.position.x);
         if (transform.position.x < rightEdge)
         {
-            //Debug.Log("-- goMoveRight -- YES");
             transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         else
         {
-            //Debug.Log("-- goMoveRight -- NOUP");
             movingLeft = true;
         }
     }

@@ -57,10 +57,6 @@ public class PlatformGenerator : MonoBehaviour
     private ScoreManager scoreManager;
     public float movementDistance;
     public float speed;
-    //private bool movingLeft;
-    //private float leftEdge;
-    //private float rightEdge;
-    //private EnemySawMovement enemySawMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -161,7 +157,7 @@ public class PlatformGenerator : MonoBehaviour
     {
         //poner las plataformas a la altura
         heightChange = transform.position.y + UnityEngine.Random.Range(maxHeightChange, -maxHeightChange); // platforms currently + random value
-                                                                                                          //heightChange = transform.position.y + 2; // platforms currently + random value
+                                                                                                           //heightChange = transform.position.y + 2; // platforms currently + random value
                                                                                                            // que no aparezcan fuera de los limites
         if (heightChange > maxHeight)
         {
@@ -228,15 +224,4 @@ public class PlatformGenerator : MonoBehaviour
         return UnityEngine.Random.Range(0f, 100f) < randomSawsThreshold;
     }
 
-    /*
-     * peces siempre
-        de 0 a 1500 -> plataformas que caen
-        de 1500 a 3000 -> pinchos (con peces?)  (en 1500 entra el pajaro)
-        de 3000 a 5000 -> ruedas y quito los pinchos ( en 3000 entra el mono)
-        ---------- 5000 volverian a entrar los pinchos¿? ( en 5000 entra la tortuga)
-
-        de 5000 a 7500 -> vuelvo a meter pinchos solo (sin rueda)
-        de 7500 a 10.000 -> vuelvo a meter ruedas
-        de > 10.000 todo 
-        */
 }

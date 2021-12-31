@@ -20,11 +20,6 @@ public class MainMenu : MonoBehaviour
     public Sprite enabledMusicSprite;
     public Sprite disabledMusicSprite;
 
-    public void Start()
-    {
-        //GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().PlayMusic();
-    }
-
     public void Update()
     {
         bool soundActive = GameObject.FindGameObjectWithTag("MusicIntro").GetComponent<MusicClass>().IsPlayingMusic();

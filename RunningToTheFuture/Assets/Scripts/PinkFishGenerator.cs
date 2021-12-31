@@ -14,13 +14,11 @@ public class PinkFishGenerator : MonoBehaviour
     public ObjectPooler strawberryPool;
     public ObjectPooler melonPool;
     public ObjectPooler bananaPool;
-    //public ObjectPooler pineapplePool;
 
     public float distanceBetweenFishes;
 
     public void SpawnFishes(Vector3 startPosition) 
     {
-        print("inside SpawnFishes");
         ObjectPooler pooler = getRandomFruit();
 
         GameObject fish1 = pooler.GetPooledObject();
@@ -49,10 +47,6 @@ public class PinkFishGenerator : MonoBehaviour
         else {
             return bananaPool;
         }
-        /*else
-        {
-            return pineapplePool;
-        }*/
     }
 
     public void addBirdPool(Vector3 startPosition)

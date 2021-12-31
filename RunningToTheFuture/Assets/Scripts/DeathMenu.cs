@@ -27,7 +27,7 @@ public class DeathMenu : MonoBehaviour
         {
             pointsText.text = "Goood: " + Mathf.Round(scoreManager.scoreCount) + " points  and " + animals + "/3 animals rescued!";
         }
-        else if (animals == 3)
+        else 
         {
             pointsText.text = "Wooow: " + Mathf.Round(scoreManager.scoreCount) + " points  and " + animals + "/3 animals rescued!";
         }
@@ -42,7 +42,6 @@ public class DeathMenu : MonoBehaviour
     public void RestartGame()
     {
         FindObjectOfType<GameManager>().Reset();
-        //GameObject.FindGameObjectWithTag("MusicRunning").GetComponent<MusicClass>().RestartMusic();
         scoreManager.saveScoreInPlayerPrefs();
     }
 

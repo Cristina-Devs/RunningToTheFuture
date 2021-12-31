@@ -39,30 +39,24 @@ public class EnemyHeadMovement : MonoBehaviour
 
     void goMoveLeft()
     {
-        //Debug.Log("-- goMoveLeft ? -- transform.position.x > leftEdge: " + transform.position.x);
         if (transform.position.y > leftEdge)
         {
-            //Debug.Log("-- goMoveLeft -- YES");
             transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.z);
         }
         else
         {
-            //Debug.Log("-- goMoveLeft -- NOUP");
             movingLeft = false;
         }
     }
 
     void goMoveRight()
     {
-        //Debug.Log("-- goMoveRight ? -- transform.position.x < rightEdge: " + transform.position.x);
         if (transform.position.y < rightEdge)
         {
-            //Debug.Log("-- goMoveRight -- YES");
             transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
         }
         else
         {
-            //Debug.Log("-- goMoveRight -- NOUP");
             movingLeft = true;
         }
     }

@@ -131,53 +131,6 @@ public class PlayerMovement : MonoBehaviour
             deathSound.Play();
         }
 
-        //grounded = true;
     }
 
-    //////if (horizontalInput > 0.01f) //look at right
-    //////    transform.localScale = Vector3.one;
-    //////else if (horizontalInput < 0.01f) //looking at left
-    //////    transform.localScale = new Vector3(-1, 1, 1);
-
-    //if (Input.GetKey(KeyCode.Space))// && grounded)
-    //{
-    //    anim.SetBool("jump", true);
-    //    Jump();
-
-    //}
-
-    //set animator parameters
-    //if (grounded) {
-    //    anim.SetBool("jump", false);
-    //}
-
-    // endless runner  bcause this is call once per physics frame
-    //private void FixedUpdate()
-    //{
-    //    //and here in endless runner body.velocity = new Vector2(0, playerFirection.y * speed);
-    //}
-
-    //private void Jump()
-    //{
-    //    body.velocity = new Vector2(body.velocity.x, jumpForce);
-    //    anim.SetTrigger("jump");
-    //    //grounded = false;
-    //}
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    //if (collision.gameObject.tag == "Ground")
-    //        //grounded = true;
-    //}
-    //Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
-
-    //Update is called once per frame
-    //void Update()
-    //{
-
-    //}
 }
