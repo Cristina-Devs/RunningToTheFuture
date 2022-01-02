@@ -29,7 +29,7 @@ PAC 4 - Versió final
 Tràiler: https://youtu.be/eY245LuVVqg
 Defensa: https://youtu.be/G_tp7p6dDbQ
 
-L'executable (apk per Android) es pot trobar a la carpeta "PAC3 - Versio Jugable" d'aquest repositori.
+L'executable (apk per Android) es pot trobar a la carpeta "PAC4 - Versio Final" d'aquest repositori.
 
 Cristina Saura Pérez
 
