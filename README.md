@@ -24,7 +24,7 @@ L'executable (apk per Android) es pot trobar a la carpeta "PAC3 - Versio Jugable
 Cristina Saura Pérez
 
 
-**PAC 4 - Versió final**
+**PAC 4 - Versió final del Joc (Gold master): **
 
 Tràiler: https://youtu.be/eY245LuVVqg
 
